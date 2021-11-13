@@ -13,3 +13,5 @@ mirrorMods:
   - RunningLate
   - SkipIntro
   - SleeplessFisherman
+  - GenericModConfigMenu
+  - GlobalConfigSettings

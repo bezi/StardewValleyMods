@@ -43,7 +43,7 @@ def installFromZipUrl(modName, zipUrl):
 
         try:
             with zipfile.ZipFile(downloadedZip, "r") as zipFile:
-                zipFile.extractall(os.path.join(MODS_DIR, modName))
+                zipFile.extractall(MODS_DIR)
         except:
             log(modName, "Unable to extract mod zip")
             return
@@ -85,6 +85,14 @@ def installLatestGitHubRelease(modName, modRepo):
     installFromZipUrl(modName, assetUrl)
 
 
+def installConfig(installedMods):
+    for modName in installedMods:
+        configFile = os.path.join(".", "config", modName, "config.json")
+        if os.path.isfile(configFile):
+            log(modName, "Post-install: installing config file.")
+            shutil.copy(configFile, os.path.join(MODS_DIR, modName))
+
+
 def main():
     config = loadConfig()
 
@@ -108,6 +116,9 @@ def main():
     for modName in config["mirrorMods"]:
         modUrl = f"https://github.com/bezi/StardewValleyMods/blob/main/mods/{modName}.zip?raw=true"
         installFromZipUrl(modName, modUrl)
+
+    # Install any per-mod configurations
+    installConfig(completeModList)
 
 
 if __name__ == "__main__":
