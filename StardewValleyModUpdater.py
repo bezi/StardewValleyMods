@@ -91,7 +91,7 @@ def main():
     config = loadConfig()
 
     completeModList = list(config["githubReleaseMods"].keys()) + list(
-        config["mirrorMods"].keys()
+        config["mirrorMods"]
     )
 
     print("Detecting the following mods: ", ", ".join(completeModList))
@@ -108,7 +108,7 @@ def main():
 
     # GitHub Mods that use a static file mirror
     for modName in config["mirrorMods"]:
-        modUrl = config["mirrorMods"][modName]
+        modUrl = f"https://github.com/bezi/StardewValleyMods/blob/main/mods/{modName}.zip?raw=true"
         installFromZipUrl(modName, modUrl)
 
 
