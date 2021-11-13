@@ -23,9 +23,7 @@ MODS_DIR = os.path.join(MODS_BASE_DIRECTORY, MODS_MANAGED_DIRNAME)
 
 
 def loadConfig():
-    with open(
-        os.path.join(MODS_BASE_DIRECTORY, MODS_MANIFEST_FILENAME), "r"
-    ) as manifest:
+    with open(os.path.join("./", MODS_MANIFEST_FILENAME), "r") as manifest:
         return yaml.safe_load(manifest.read())
 
 

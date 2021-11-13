@@ -1,0 +1,15 @@
+---
+githubReleaseMods:
+  UIInfoSuite2: Annosz/UIInfoSuite2
+  StardewHack: bcmpinc/StardewHack
+  AlwaysScrollMap: bcmpinc/StardewHack
+  NoDefendWithSword: DiscipleOfEris/NoDefendWithSword
+mirrorMods:
+  - EnergyCount
+  - FastAnimations
+  - HilightedJars
+  - LookupAnything
+  - RememberFacedDirection
+  - RunningLate
+  - SkipIntro
+  - SleeplessFisherman
